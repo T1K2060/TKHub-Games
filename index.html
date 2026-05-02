@@ -819,29 +819,7 @@
 </head>
 <body>
 <script>
-    // WiFi detection and redirect functionality
-    async function checkNetworkAndRedirect() {
-      try {
-        // Try to fetch a small resource to check connectivity
-        const response = await fetch('https://www.google.com/favicon.ico', {
-          mode: 'no-cors',
-          cache: 'no-cache'
-        });
-        
-        // If we can reach external resources, redirect to launchpad
-        console.log('Network detected - Redirecting to launchpad...');
-        window.location.replace('https://sites.google.com/gm.sbac.edu/launchpad/home');
-      } catch (error) {
-        // No network connection, allow access to the app
-        console.log('No network detected - Allowing offline access');
-      }
-    }
 
-    // Check network on page load
-    checkNetworkAndRedirect();
-
-    // Also check when coming back online
-    window.addEventListener('online', checkNetworkAndRedirect);
   </script>
 
 <div id="app">
